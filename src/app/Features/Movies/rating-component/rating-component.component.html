@@ -1,0 +1,22 @@
+<div class="stars">
+  <form action="">
+    <ng-container *ngFor="let star of stars; let i = index">
+      <input
+        title="{{ i + 1 }}"
+        class="star star-{{ i + 1 }}"
+        id="star-{{ i + 1 }}-{{ entityId }}"
+        type="radio"
+        name="star"
+        [value]="star"
+        [(ngModel)]="rating"
+        (change)="onStarClick()"
+      />
+      <label
+        class="star star-{{ i + 1 }}"
+        for="star-{{ i + 1 }}-{{ entityId }}"
+      >
+        <fa-icon [icon]="['fas', 'star']"></fa-icon>
+      </label>
+    </ng-container>
+  </form>
+</div>
