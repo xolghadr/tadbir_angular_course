@@ -13,4 +13,7 @@ export class MoviesService {
   getMovieList(): Observable<PagedMovieList> {
     return this.http.get<PagedMovieList>('https://moviesapi.ir/api/v1/movies?page=1');
   }
+  getGenreMovieList(genreId: string): Observable<PagedMovieList> {
+    return this.http.get<PagedMovieList>(`https://moviesapi.ir/api/v1/genres/${genreId}/movies?page=1`);
+  }
 }

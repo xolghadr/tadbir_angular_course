@@ -1,0 +1,9 @@
+mat-sidenav {
+  width: 200px;
+}
+a {
+  color: azure;
+}
+a.isActive {
+  background-color: black;
+}

@@ -1,5 +1,5 @@
 <div class="movie-container">
-  <img [src]="movie.poster" [alt]="movie.title" width="100" [title]="movie.title">
+  <img [src]="movie.poster" [alt]="movie.title" width="100" title="{{movie.title}}">
   <h4>{{ movie.title }}</h4>
   <app-rating-component [rating]="movie.imdb_rating" [entityId]="movie.id" (selectionChanged)="rateMovie(movie.id, $event)"></app-rating-component>
 </div>

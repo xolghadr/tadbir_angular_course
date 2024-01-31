@@ -1,7 +1,7 @@
-import { Movie } from "./Movie";
+import { MovieModel } from "./movie.model";
 
 export interface PagedMovieList {
-  data: Movie[];
+  data: MovieModel[];
   metadata: {
     current_page: string;
     per_page: number;
