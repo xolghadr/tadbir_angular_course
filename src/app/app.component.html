@@ -1,2 +1,7 @@
-<h1>Exercise #2 & #3</h1>
+<h1 class="d-flex justify-content-between px-5">
+  <strong>Exercise #2 & #3</strong>
+  <button mat-raised-button color="primary">
+    <a [routerLink]="['/', 'movies', 'new']">Add New Movie</a>
+  </button>
+</h1>
 <router-outlet></router-outlet>

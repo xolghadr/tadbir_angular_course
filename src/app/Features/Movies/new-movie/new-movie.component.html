@@ -1,0 +1,79 @@
+<form class="p-5" [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+  <div class="d-flex flex-column">
+    <fieldset class="p-4 my-5">
+      <div class="col-12">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Movie Name</mat-label>
+          <input matInput formControlName="title" name="title" />
+          <mat-error *ngIf="movieForm.get('title')?.invalid"
+            >This field is required.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>IMDB Id</mat-label>
+          <input matInput formControlName="imdb_id" name="imdb_id" />
+          <mat-error *ngIf="movieForm.get('imdb_id')?.invalid"
+            >This field is required.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Year</mat-label>
+          <input matInput formControlName="year" name="year" type="number" />
+          <mat-error *ngIf="movieForm.get('year')?.getError('required')"
+            >Enter the year in numbers.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Country</mat-label>
+          <input matInput formControlName="country" name="country" />
+          <mat-error *ngIf="movieForm.get('country')?.invalid"
+            >This field is required.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-label class="d-flex mb-3">
+          IMDB Rating:
+          <app-rating-component (selectionChanged)="rateMovie($event)">
+          </app-rating-component>
+        </mat-label>
+      </div>
+      <div class="col-12">
+        <input
+          hidden
+          name="poster"
+          type="file"
+          #poster
+          accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*"
+          (change)="handleInputChange($event)"
+        />
+        <button
+          mat-stroked-button
+          color="primary"
+          type="button"
+          title="upload poster image"
+          (click)="poster.click()"
+        >
+          upload poster <fa-icon [icon]="['fas', 'file']"></fa-icon>
+        </button>
+      </div>
+    </fieldset>
+    <div class="col-12">
+      <button
+        mat-stroked-button
+        color="primary"
+        type="submit"
+        [disabled]="!movieForm.valid"
+      >
+        <span class="mx-2">Save</span>
+        <fa-icon [icon]="['fas', 'save']"></fa-icon>
+      </button>
+    </div>
+  </div>
+</form>

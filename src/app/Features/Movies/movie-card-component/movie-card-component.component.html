@@ -1,4 +1,4 @@
-<div class="movie-container" [ngStyle]="{'background-image': url(movie.poster)}">
+<div class="movie-container" [ngStyle]="{backgroundImage: url(movie.poster)}">
   <h4>{{ movie.title }}</h4>
   <app-rating-component [rating]="movie.imdb_rating" [entityId]="movie.id" (selectionChanged)="rateMovie(movie.id, $event)"></app-rating-component>
 </div>

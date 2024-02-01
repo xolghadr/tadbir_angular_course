@@ -38,7 +38,6 @@ export class MovieDetailsComponent {
       .subscribe({
         next: (movieData) => {
           this.movie = movieData;
-          console.log(this.movie);
         },
       });
   }
