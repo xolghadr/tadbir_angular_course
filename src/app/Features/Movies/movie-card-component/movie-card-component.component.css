@@ -9,4 +9,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: center;
+  height: 400px;
+  justify-content: end;
+}
+
+.movie-container h4 {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+.movie-container:hover {
+  overflow-y: auto;
+}
+.movie-container:hover h4 {
+  white-space: inherit;
 }

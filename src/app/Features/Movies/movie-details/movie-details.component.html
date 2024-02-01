@@ -1,0 +1,33 @@
+<div class="mat-elevation-z8">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img
+          class="col-12"
+          mat-raised-button
+          [src]="movie.poster"
+          alt="Movie Poster"
+        />
+      </div>
+      <div class="col-md-8">
+        <h1>{{ movie.title }}</h1>
+        <p><strong>Actors:</strong> {{ movie.actors }}</p>
+        <p><strong>Country:</strong> {{ movie.country }}</p>
+        <p><strong>Plot:</strong> {{ movie.plot }}</p>
+        <p><strong>Release Date:</strong> {{ movie.released }}</p>
+        <p><strong>Runtime:</strong> {{ movie.runtime }}</p>
+        <p><strong>Director:</strong> {{ movie.director }}</p>
+        <p><strong>Writer:</strong> {{ movie.writer }}</p>
+        <p>
+          <strong>Genres: </strong>
+          <ng-container *ngFor="let genre of movie.genres">
+            <a class="txt" [routerLink]="['/', 'movies', 'genres', getGenreId(genre)]">{{ genre }}</a>
+            <br />
+          </ng-container>
+        </p>
+        <p><strong>IMDB Rating:</strong> {{ movie.imdb_rating }}</p>
+        <p><strong>Metascore:</strong> {{ movie.metascore }}</p>
+      </div>
+    </div>
+  </div>
+</div>

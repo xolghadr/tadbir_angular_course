@@ -1,16 +1,16 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="h-100">
   <mat-sidenav #sideNav [opened]="true" mode="side" position="start">
     <mat-list>
       <mat-list-item> list of genres </mat-list-item>
       <mat-list-item
         *ngFor="let genre of genreList"
-        [ngClass]="{ isActive: genre.id === '1' }"
+        [ngClass]="{ 'isActive': genre.id == activeGenre }"
       >
-        <a [routerLink]="['movies', 'genre', genre.id]">{{ genre.name }}</a>
+        <a class="txt" [routerLink]="['genres', genre.id]">{{ genre.name }}</a>
       </mat-list-item>
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onActivateRoute()"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

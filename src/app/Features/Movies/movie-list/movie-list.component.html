@@ -1,5 +1,7 @@
 <div class="movie-list-container">
   <ng-container *ngFor="let movie of movies">
-    <app-movie-component [movie]="movie"></app-movie-component>
+    <a class="movie-card-component" [routerLink]="['/', 'movies', 'detail', movie.id]">
+      <app-movie-card-component [movie]="movie"></app-movie-card-component>
+    </a>
   </ng-container>
 </div>
